@@ -168,7 +168,7 @@ unsigned gettime( unsigned char *base, unsigned char time_offset ) {
     time.tm_min   = bcd2n( get32reg( base , time_offset + TM_MINUTES_OFF ));
     time.tm_hour  = bcd2n( get32reg( base , time_offset + TM_HOURS_OFF ));
     time.tm_mday  = bcd2n( get32reg( base , time_offset + TM_DAYS_OFF ));
-    time.tm_mon   = bcd2n( get32reg( base , time_offset + TM_MONTHS_OFF ));
+    time.tm_mon   = bcd2n( get32reg( base , time_offset + TM_MONTHS_OFF )) - 1;
     time.tm_year  = bcd2n( get32reg( base , time_offset + TM_YEARS_OFF ) );
 
     if (time.tm_year <70 ) {
