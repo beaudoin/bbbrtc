@@ -197,7 +197,7 @@ void settime( unsigned char *base, unsigned char time_offset , time_t newtime ) 
     set32reg( base , time_offset + TM_MINUTES_OFF , n2bcd( time->tm_min   ));
     set32reg( base , time_offset + TM_HOURS_OFF   , n2bcd( time->tm_hour  ));
     set32reg( base , time_offset + TM_DAYS_OFF    , n2bcd( time->tm_mday  ));
-    set32reg( base , time_offset + TM_MONTHS_OFF  , n2bcd( time->tm_mon   ));
+    set32reg( base , time_offset + TM_MONTHS_OFF  , n2bcd( time->tm_mon + 1 ));
     set32reg( base , time_offset + TM_YEARS_OFF   , n2bcd( time->tm_year % 100)) ;  //  (RTC only has 2 year digits)
 
 
